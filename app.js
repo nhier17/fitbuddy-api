@@ -12,11 +12,18 @@ const cookieParser = require('cookie-parser');
 //db
 const connectDB = require('./db/connect');
 
+//routers
+const authRouter = require('./routes/AuthRoutes'); 
+
 app.use(express.json());
 app.use(cors());
 
+app.use('/api/auth', authRouter);
 
 // routes
+app.get('/', (req, res) => {
+    res.send('API is running...');
+})
 
 const port = process.env.PORT || 5000;
 const start = async (req, res) => {
