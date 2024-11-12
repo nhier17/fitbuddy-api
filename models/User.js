@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema({
     },
     isOAuth: {
         type: Boolean,
-        default: false // Assume false for regular email/password signups
+        default: false 
     },
     image: {
         type: String,
@@ -53,6 +53,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         enum: ['beginner', 'intermediate', 'advanced'],
         default: 'beginner'
+    },
+    dietaryPreferences: {
+        type: String,
+        enum: ['non-vegetarian', 'vegetarian'],
+        default: 'non-vegetarian'
     },
     createdAt: {
         type: Date,
